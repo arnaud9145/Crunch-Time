@@ -8,13 +8,16 @@ class Home extends React.Component {
   render() {
     return (
       <div className='home-container'>
-        <h1>Bienvenu sur le site du groupe 23 du crunch time !</h1>
+        <h1>
+          Bienvenu sur le site 'Tu sais pas coder Jack' du groupe 23 du UTT
+          crunch time 2019 !
+        </h1>
         <p>
           Ce site est une maquette, un "proof of concept" de notre idée. Il a
           pour but de montrer à quoi peut ressembler un jeu pour apprendre le
           développement logiciel.
         </p>
-        <img src={require('./assets/start.png')} />
+        <img src={require('./assets/start.png')} alt='' />
         <Button type='primary' onClick={this.props.goToName}>
           Commencer une partie
         </Button>

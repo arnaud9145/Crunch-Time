@@ -73,7 +73,29 @@ const initialState = {
           line: 'Sinon'
         }
       ],
-      link: '/history/0'
+      combinations: [[2, 3, 1, 5, 7, 6, 4], [3, 2, 1, 5, 7, 6, 4]],
+      link: '/history/2'
+    },
+    {
+      key: 2,
+      type: 'button',
+      image: 'start.png',
+      text: 'ceci est un text 3',
+      buttons: [
+        {
+          key: 1,
+          text: 'bouton 1'
+        },
+        {
+          key: 2,
+          text: 'bouton 2',
+          link: '/history/3'
+        },
+        {
+          key: 3,
+          text: 'bouton 3'
+        }
+      ]
     }
   ]
 }

@@ -12,7 +12,7 @@ git clone git@github.com:ungdev/
 # or
 git clone https://github.com/ungdev/
 
-cd TV-Front
+cd Crunch-Time
 yarn
 ```
 

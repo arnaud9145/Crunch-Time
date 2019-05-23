@@ -37,9 +37,8 @@ class DragGame extends React.Component {
       this.props.sendError()
     } else {
       this.props.sendValidation()
-      setTimeout(() => this.props.goToPage(this.props.link), 4000)
+      setTimeout(() => this.props.goToPage(this.props.link), 2000)
     }
-    //this.props.goToPage(this.props.link)
   }
   updateLines = (dragIndex, hoverIndex) => {
     const { lines } = this.state
@@ -53,7 +52,6 @@ class DragGame extends React.Component {
     )
   }
   render() {
-    console.log(this.state.lines)
     return (
       <React.Fragment>
         <DragableList
