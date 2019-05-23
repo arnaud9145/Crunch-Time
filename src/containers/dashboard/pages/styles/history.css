@@ -17,15 +17,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 500px;
   width: 90%;
 }
 .history-image > img {
   max-width: 100%;
   max-height: 100%;
-  max-width: 400px;
-  max-height: 400px;
+  max-width: 500px;
+  max-height: 500px;
 }
 .history-container > * {
   margin-bottom: 10px;

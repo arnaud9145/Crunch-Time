@@ -31,7 +31,9 @@ class Game extends React.Component {
 
     return (
       <div className='game-container'>
-        <img src={require(`./assets/${game.image}`)} alt='' />
+        <div className='game-image'>
+          <img src={require(`./assets/${game.image}`)} alt='' />
+        </div>
         <p>{game.text}</p>
         {element}
       </div>
