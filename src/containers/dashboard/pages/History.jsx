@@ -9,9 +9,9 @@ class History extends React.Component {
     const { pages, match } = this.props
     const page = pages[match.params.id]
     return (
-      <div className='home-container'>
+      <div className='history-container'>
         <div className='history'>
-          <img src={require(`./assets/${page.image}`)} alt='' />
+          <div className='history-image'><img src={require(`./assets/${page.image}`)} alt='' /></div>
 
           <p>{page.text}</p>
         </div>

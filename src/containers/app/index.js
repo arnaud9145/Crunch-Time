@@ -3,20 +3,22 @@ import { connect } from 'react-redux'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import { Notifs as Notifications } from 'redux-notifications'
 import 'antd/dist/antd.css'
+import { getName } from '../../modules/user'
 
 import asyncComponent from '../../components/async'
 
 const Dashboard = asyncComponent(() => import('../dashboard/Dashboard'))
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    props.getName()
+  }
   render() {
     return (
       <div style={{ height: '100%' }}>
         <Notifications />
         <Switch>
-          <Route
-            path={process.env.REACT_APP_BASEURL}
-            component={Dashboard}
-          />
+          <Route path={process.env.REACT_APP_BASEURL} component={Dashboard} />
           <Redirect from='*' to='/' />
         </Switch>
       </div>
@@ -24,10 +26,10 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-})
+const mapStateToProps = state => ({})
 
 const mapDispatchToProps = dispatch => ({
+  getName: () => dispatch(getName())
 })
 
 export default connect(
