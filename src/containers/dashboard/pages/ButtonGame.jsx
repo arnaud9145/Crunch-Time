@@ -2,12 +2,19 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import { Button } from 'antd'
+import { setCours } from '../../../modules/cours'
 import { actions as notifActions } from 'redux-notifications'
 
 class ButtonGame extends React.Component {
   onClick = link => {
     if (link) {
       this.props.sendValidation()
+      let { cours, addCours } = this.props
+      if (!cours) cours = []
+      if (!cours.find(c => c.key === addCours.key)) {
+        cours.push(addCours)
+        this.props.setCours(cours)
+      }
       setTimeout(() => this.props.goToPage(link), 2000)
     } else this.props.sendError()
   }
@@ -28,7 +35,9 @@ class ButtonGame extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  cours: state.cours.cours
+})
 
 const mapDispatchToProps = dispatch => ({
   goToPage: link => dispatch(push(link)),
@@ -46,7 +55,8 @@ const mapDispatchToProps = dispatch => ({
         message: 'Correct !',
         dismissAfter: 2000
       })
-    )
+    ),
+  setCours: cours => dispatch(setCours(cours))
 })
 
 export default connect(

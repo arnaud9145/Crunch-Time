@@ -13,7 +13,7 @@ class Game extends React.Component {
     let element = <Spin />
     switch (game.type) {
       case 'button':
-        element = <ButtonGame buttons={game.buttons} />
+        element = <ButtonGame buttons={game.buttons} addCours={game.addCours} />
         break
       case 'drag':
         element = (
@@ -21,6 +21,7 @@ class Game extends React.Component {
             lines={game.lines}
             combinations={game.combinations}
             link={game.link}
+            addCours={game.addCours}
           />
         )
         break

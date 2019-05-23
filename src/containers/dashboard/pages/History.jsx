@@ -11,9 +11,11 @@ class History extends React.Component {
     return (
       <div className='history-container'>
         <div className='history'>
-          <div className='history-image'><img src={require(`./assets/${page.image}`)} alt='' /></div>
+          <div className='history-image'>
+            <img src={require(`./assets/${page.image}`)} alt='' />
+          </div>
 
-          <p>{page.text}</p>
+          <p>{page.text.replace('#name', this.props.name)}</p>
         </div>
         <Button
           type='primary'
@@ -27,7 +29,8 @@ class History extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  pages: state.pages.pages
+  pages: state.pages.pages,
+  name: state.user.name
 })
 
 const mapDispatchToProps = dispatch => ({

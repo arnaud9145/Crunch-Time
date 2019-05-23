@@ -1,4 +1,4 @@
-# Crunch Time
+# Crunch Time by Arnaud Dufour
 
 ## Requirements
 
@@ -8,9 +8,9 @@
 ## Installation
 
 ```
-git clone git@github.com:ungdev/
+git clone git@github.com:arnaud9145/Crunch-Time
 # or
-git clone https://github.com/ungdev/
+git clone https://github.com/arnaud9145/Crunch-Time
 
 cd Crunch-Time
 yarn

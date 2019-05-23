@@ -5,6 +5,7 @@ import DragableList from '../../../components/DragableList'
 import update from 'immutability-helper'
 import { Button } from 'antd'
 import { actions as notifActions } from 'redux-notifications'
+import { setCours } from '../../../modules/cours'
 
 class DragGame extends React.Component {
   constructor(props) {
@@ -37,6 +38,12 @@ class DragGame extends React.Component {
       this.props.sendError()
     } else {
       this.props.sendValidation()
+      let { cours, addCours } = this.props
+      if (!cours) cours = []
+      if (!cours.find(c => c.key === addCours.key)) {
+        cours.push(addCours)
+        this.props.setCours(cours)
+      }
       setTimeout(() => this.props.goToPage(this.props.link), 2000)
     }
   }
@@ -67,7 +74,9 @@ class DragGame extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => ({
+  cours: state.cours.cours
+})
 
 const mapDispatchToProps = dispatch => ({
   goToPage: link => dispatch(push(link)),
@@ -85,7 +94,8 @@ const mapDispatchToProps = dispatch => ({
         message: 'Correct !',
         dismissAfter: 2000
       })
-    )
+    ),
+  setCours: cours => dispatch(setCours(cours))
 })
 
 export default connect(

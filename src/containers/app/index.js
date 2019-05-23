@@ -4,6 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import { Notifs as Notifications } from 'redux-notifications'
 import 'antd/dist/antd.css'
 import { getName } from '../../modules/user'
+import { getCours } from '../../modules/cours'
 
 import asyncComponent from '../../components/async'
 
@@ -12,6 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     props.getName()
+    props.getCours()
   }
   render() {
     return (
@@ -29,7 +31,8 @@ class App extends React.Component {
 const mapStateToProps = state => ({})
 
 const mapDispatchToProps = dispatch => ({
-  getName: () => dispatch(getName())
+  getName: () => dispatch(getName()),
+  getCours: () => dispatch(getCours()),
 })
 
 export default connect(
